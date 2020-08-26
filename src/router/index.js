@@ -1,27 +1,45 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+// 防止路由重复报错
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+	return originalPush.call(this, location).catch(err => err)
+}
+
+const routes = [
+	// 默认路由重定向
+	{
+		path: '',
+		redirect: '/Home',
+	},
+	{
+		path: '/Home',
+		name: 'Home',
+		component: () => import('../views/Home/Home.vue')
+	},
+	{
+		path: '/Computer',
+		name: 'Computer',
+		component: () => import('../views/Computer/Computer.vue')
+	},
+	{
+		path: '/Art',
+		name: 'Art',
+		component: () => import('../views/Art/Art.vue')
+	},
+	{
+		path: '/Game',
+		name: 'Game',
+		component: () => import('../views/Game/Game.vue')
+	},
 ]
 
 const router = new VueRouter({
-  routes
+	routes,
+	mode: 'history'
 })
 
 export default router
