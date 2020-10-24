@@ -4,11 +4,16 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 // 防止路由重复报错
-const originalPush = VueRouter.prototype.push;
-VueRouter.prototype.push = function push(location) {
-	return originalPush.call(this, location).catch(err => err)
+const VueRouterPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(to) {
+	return VueRouterPush.call(this, to).catch(err => err)
 }
 
+//replace
+const VueRouterReplace = VueRouter.prototype.replace
+VueRouter.prototype.replace = function replace(to) {
+	return VueRouterReplace.call(this, to).catch(err => err)
+}
 const routes = [
 	// 默认路由重定向
 	{
@@ -18,23 +23,40 @@ const routes = [
 	{
 		path: '/Home',
 		name: 'Home',
-		component: () => import('../views/Home/Home.vue')
+		component: () => import('views/Home/Home.vue')
 	},
 	{
 		path: '/Computer',
 		name: 'Computer',
-		component: () => import('../views/Computer/Computer.vue')
+		component: () => import('views/Computer/Computer.vue'),
+		children: [
+			{
+				path: 'HTML',
+				name: 'HTML',
+				component: () => import('views/Computer/HTML/HTML.vue')
+			},
+			{
+				path: 'CSS',
+				name: 'CSS',
+				component: () => import('views/Computer/CSS/CSS.vue')
+			},
+			{
+				path: 'JavaScript',
+				name: 'JavaScript',
+				component: () => import('views/Computer/JavaScript/JavaScript.vue')
+			},
+			{
+				path: 'SQL',
+				name: 'SQL',
+				component: () => import('views/Computer/SQL/SQL.vue')
+			},
+		]
 	},
-	{
-		path: '/Art',
+{
+	path: '/Art',
 		name: 'Art',
-		component: () => import('../views/Art/Art.vue')
-	},
-	{
-		path: '/Game',
-		name: 'Game',
-		component: () => import('../views/Game/Game.vue')
-	},
+			component: () => import('../views/Art/Art.vue')
+},
 ]
 
 const router = new VueRouter({

@@ -1,5 +1,5 @@
 {
-  "name": "supermarket",
+  "name": "hat-soft",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,10 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "github-markdown-css": "^4.0.0",
+    "html-loader": "^1.3.2",
+    "markdown-it-vue": "^1.1.4",
+    "markdown-loader": "^6.0.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -18,6 +22,7 @@
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "vue-cli-plugin-axios": "0.0.4",
+    "vue-markdown-loader": "^0.6.2",
     "vue-template-compiler": "^2.6.11"
   }
 }

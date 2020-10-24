@@ -1,8 +1,8 @@
 <template>
 	<div class="nav-bar">
 		<div class="nav-bar-item"><slot name="left"></slot></div>
-		<div class="nav-bar-item"><slot name="middle"></slot></slot></div>
-		<div class="nav-bar-item"><slot name="right"></slot></slot></div>
+		<div class="nav-bar-item"><slot name="middle"></slot></div>
+		<div class="nav-bar-item"><slot name="right"></slot></div>
 	</div>
 </template>
 
