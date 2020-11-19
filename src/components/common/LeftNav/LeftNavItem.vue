@@ -28,9 +28,10 @@ export default {
 
 <style>
 .left-nav-item {
+  border: 1px black solid;
   /* 调整子元素居中用的 */
   display: flex;
-
+  margin-bottom: 5px;
 }
 .text {
   /* 居中 */

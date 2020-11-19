@@ -8,6 +8,8 @@
 
 <script>
 import MainTapBar from "components/content/MainTapBar.vue";
+import 'highlight.js/styles/github.css'
+import 'github-markdown-css'
 export default {
   name: "App",
   components: {

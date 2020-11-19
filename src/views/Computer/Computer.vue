@@ -22,6 +22,7 @@ export default {
   flex-direction: row;
 }
 #nav{
+  margin-top: 20px;
 	width: 10%;
 }
 #content{

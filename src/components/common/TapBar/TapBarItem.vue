@@ -35,6 +35,7 @@
 
 <style>
 	.tap-bar-item {
+		border: 1px black solid;
 		flex: 1;
 		text-align: center;
 		height: 40px;

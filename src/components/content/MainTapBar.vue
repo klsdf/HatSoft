@@ -1,16 +1,16 @@
 <template>
-	<TapBar>
-		<TapBarItem linkpath="/Home">
+	<TapBar class="tap-bar">
+		<TapBarItem linkpath="/Home" class="tap-bar-item">
 			<img slot="img" src="~assets/img/home.svg" alt="">
-			<span slot="text">首页</span>
+			<span slot="text" class="text">首页</span>
 		</TapBarItem>
-		<TapBarItem linkpath="/Computer">
+		<TapBarItem linkpath="/Computer" class="tap-bar-item">
 			<img slot="img" src="~assets/img/code.svg" alt="">
-			<span slot="text">计算机</span>
+			<span slot="text" class="text">计算机</span>
 		</TapBarItem>
-		<TapBarItem linkpath="/Art">
+		<TapBarItem linkpath="/Art" class="tap-bar-item">
 			<img slot="img" src="~assets/img/art.svg" alt="">
-			<span slot="text">艺术</span>
+			<span slot="text" class="text">艺术</span>
 		</TapBarItem>
 	</TapBar>
 </template>
@@ -27,5 +27,10 @@
 </script>
 
 <style>
-	
+	.tap-bar{
+		background-color: rgb(81,85,118);
+	}
+	.text{
+		color: rgb(189,191,165);
+	}
 </style>

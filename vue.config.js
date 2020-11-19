@@ -1,5 +1,8 @@
 // 路径别名
+
+const webpack = require("webpack");
 module.exports = {
+  publicPath: process.env.NODE_ENV == 'production' ? './' : '/',
   configureWebpack: {
     resolve: {
       alias: {
@@ -8,9 +11,9 @@ module.exports = {
         'common': 'components/common',
         'assets': '@/assets',
         'network': '@/network',
-        'notes':'@/notes',
+        'notes': '@/notes',
         'views': '@/views',
-        "Computer":'views/Computer'
+        "Computer": 'views/Computer'
       }
     },
   }

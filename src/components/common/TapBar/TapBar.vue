@@ -27,8 +27,6 @@
 		bottom: 0px;
 		right: 0px;
 
-		/* 背景颜色 */
-		background-color: khaki;
 	}
 
 </style>
